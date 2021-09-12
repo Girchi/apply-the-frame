@@ -11,17 +11,20 @@
     <title>Apply frames to the image</title>
 </head>
 <body>
-    
     <div class="container">
         <p>ატვირთე ფაილი</p>
         <div class="custom-file img-upload">
             <input type="file" class="custom-file-input" id="imageUploadInput">
             <label class="custom-file-label">აირჩიე</label>
+            <br><br>
+            <select id='selectResolution'>
+                <option default selected disabled>ფოტოს ზომა</option>
+                <option value="1000">1000x1000 (Default)</option>
+                <option value="2048">2048x2048</option>
+            </select>
         </div>
     </div>
 
-    <!-- Uncomment the line below if you want an image to be 2048x2048 -->
-    <!-- <canvas id='canvas' width="2048" height="2048"></canvas> -->
     <canvas id='canvas' width="1000" height="1000"></canvas>
     <img id='img' src="">
     

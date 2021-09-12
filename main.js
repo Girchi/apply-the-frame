@@ -49,3 +49,12 @@ window.addEventListener('load', () => {
     }
   });
 });
+
+
+const selectResolution = document.querySelector("#selectResolution"),
+canvas = document.querySelector("#canvas");
+
+selectResolution.addEventListener("change", () => {
+  canvas.width = selectResolution.value;
+  canvas.height = selectResolution.value;
+})
