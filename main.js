@@ -23,7 +23,24 @@ window.addEventListener('load', () => {
             ctx.drawImage(frameImg, 0, 0, w, h);
             
             let img = canvas.toDataURL("image/jpg", 1.0);
-            document.write(`<img src="${img}" width="200" height="150"/><a href="${img}" download><button>გადმოწერა</button></a>`);
+            document.write(`
+            <style>
+              .generatedContainer {
+                align-items: center;
+                margin: 180px auto;
+                width: max-content;
+              }
+              p {
+                font-family: sans-serif;
+              }
+            </style>
+            <div class='generatedContainer'>
+              <p>დააკლიკე გადმოსაწერად</p>
+              <a href="${img}" download>
+                <img class='generatedImg' src="${img}" width="200" height="150"/>
+              </a>
+            </div>
+            `);
           }
         } catch(err) {
           console.log("Something went wrong:\n", err);
