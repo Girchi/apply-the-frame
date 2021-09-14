@@ -11,3 +11,15 @@
 p {
     margin-bottom: -95px;
 }
+
+#img {
+    display: none;
+}
+
+#imgcont {
+    width: 50%;
+}
+
+#container {
+    display: flex;
+}

@@ -1,33 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="./style.css">
-     
-    <title>Apply frames to the image</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="./croppie/croppie.css" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="./style.css">
+
+  <title>Apply frames to the image</title>
 </head>
+
 <body>
-    <div class="container">
-        <p>ატვირთე ფაილი</p>
-        <div class="custom-file img-upload">
-            <input type="file" class="custom-file-input" id="imageUploadInput">
-            <label class="custom-file-label">აირჩიე</label>
-            <br><br>
-            <select id='selectResolution'>
-                <option default selected disabled>ფოტოს ზომა</option>
-                <option value="1000">1000x1000 (Default)</option>
-                <option value="2048">2048x2048</option>
-            </select>
-        </div>
+  <div class="container">
+    <p>ატვირთე ფაილი</p>
+    <div class="custom-file img-upload">
+      <input type="file" class="custom-file-input" id="imageUploadInput">
+      <label class="custom-file-label">აირჩიე</label>
+      <br><br>
+      <select id='selectResolution'>
+        <option default selected disabled>ფოტოს ზომა</option>
+        <option value="1000">1000x1000 (Default)</option>
+        <option value="2048">2048x2048</option>
+      </select>
     </div>
+  </div>
 
-    <canvas id='canvas' width="1000" height="1000"></canvas>
+  <canvas id='firstCanvas' width="1000" height="1000"></canvas>
+  <canvas id='canvas' width="1000" height="1000"></canvas>
+
+  <div id='imgcont'>
     <img id='img' src="">
+    <button id='btn'>GET IMAGE</button>
+  </div>
 
-<script src="./main.js" type='module'></script>
+  <div id="container"></div>
+
+<script src="./main.js" type="module"></script>
+<script src="./croppie/croppie.js"></script>
 </body>
 </html>
