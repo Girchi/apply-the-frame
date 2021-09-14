@@ -5,7 +5,7 @@
 
 .container {
     margin: 100px auto;
-    width: 50%;
+    width: max-content;
     margin: 70px auto;
 }
 
@@ -26,4 +26,3 @@ p {
 #firstCanvas, #canvas {
     display: none;
 }
-
