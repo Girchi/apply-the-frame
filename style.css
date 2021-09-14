@@ -6,6 +6,13 @@
 .container {
     margin: 100px auto;
     width: 50%;
+    margin: 70px auto;
+}
+
+#cropImage {
+    margin: -50px auto;
+    width: 50%;
+    display: none;
 }
 
 p {
@@ -16,10 +23,7 @@ p {
     display: none;
 }
 
-#imgcont {
-    width: 50%;
+#firstCanvas, #canvas {
+    display: none;
 }
 
-#container {
-    display: flex;
-}

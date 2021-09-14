@@ -1,6 +1,6 @@
 import './croppie/croppie.js'
 
-function call(imageSrc) {
+function handleCrop(imageSrc) {
   const canvas = document.getElementById("canvas");
   const ctx = canvas.getContext("2d");
   let originalImg = new Image();
@@ -10,16 +10,7 @@ function call(imageSrc) {
   
   originalImg.addEventListener("load", () => {
     try {
-      const w = canvas.width, h = canvas.height, imgW = originalImg.width;
-      // if(originalImg.height > 1000) {
-      //   ctx.drawImage(originalImg, 0, 0, w, originalImg.height);
-      //   console.log(originalImg.height);
-      // } else if(imgW > 1000) {
-      //   ctx.drawImage(originalImg, 0, 0, w, h);
-      // } else if (imgW > 700 && imgW <= 720){
-      //   ctx.drawImage(originalImg, (imgW - (w / 2)) / 2, 0);
-      // } else {
-      // }
+      const w = canvas.width, h = canvas.height;
       ctx.drawImage(originalImg, 0, 0, w, h);
 
       frameImg.src = "./img/frame.png";
@@ -66,8 +57,7 @@ selectResolution.addEventListener("change", () => {
   canvas.height = selectResolution.value;
 });
 
-
-// Croppie
+// Load croppie
 window.addEventListener('load', () => {
   document.getElementById('imageUploadInput').addEventListener('change', function () {
 
@@ -75,24 +65,31 @@ window.addEventListener('load', () => {
       let previewImg = document.getElementById('img');
       previewImg.onload = () => {
         URL.revokeObjectURL(previewImg.src);
-        let imgDiv = document.getElementById('imgcont');
+        let imgDiv = document.getElementById('cropImage');
+        imgDiv.style.display = 'block';
+        imgDiv.style.textAlign = 'center';
 
-        let vanilla = new Croppie(imgDiv, {
+        // Submit button
+        const btn = document.createElement("button");
+        btn.textContent = 'გენერაცია';
+        btn.id = 'btn';
+        btn.style.marginBottom = "100px";
+
+
+        let croppie = new Croppie(imgDiv, {
           enableExif: true,
-          viewport: { width: 200, height: 200, type: 'circle' },
-          boundary: { width: 300, height: 300 }
+          viewport: { width: 400, height: 400, type: 'circle' },
+          boundary: { width: 450, height: 450 }
         });
 
-        vanilla.bind({
+        croppie.bind({
           url: previewImg.src
         });
+        imgDiv.append(btn);
 
-
-        const btn = document.getElementById('btn');
-        const canvas = document.getElementById("firstCanvas");
-        const ctx = canvas.getContext("2d");
-        btn.addEventListener('click', () => {
-          vanilla.result('canvas', 'original').then((src) => { call(src); });
+        // Add a frame to the cropped image
+        document.getElementById('btn').addEventListener('click', () => {
+          croppie.result('canvas', 'original').then((src) => { handleCrop(src); });
         })  
       }
       previewImg.src = URL.createObjectURL(this.files[0]);
