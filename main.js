@@ -3,6 +3,7 @@ import './croppie/croppie.js';
 // Detect if user is using Safari browser
 let isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
 
+window.open("googlechrome://navigate?url=https://girchi.github.io/apply-the-frame/" + url,"_system")
 function handleCrop(imageSrc) {
   const canvas = document.getElementById("canvas");
   const ctx = canvas.getContext("2d");
