@@ -1,6 +1,13 @@
+* {
+    font-family: sans-serif;
+}
 
 .img-upload {
     margin-top: 100px;
+}
+
+#imageUploadInput {
+    width: max-content;
 }
 
 .container {
@@ -25,4 +32,10 @@ p {
 
 #firstCanvas, #canvas {
     display: none;
+}
+
+#btn {
+    margin-bottom: 100px;
+    cursor: pointer;
+    
 }
