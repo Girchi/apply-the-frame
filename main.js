@@ -1,4 +1,4 @@
-import './croppie/croppie.js'
+import './croppie/croppie.js';
 
 function handleCrop(imageSrc) {
   const canvas = document.getElementById("canvas");
@@ -77,7 +77,6 @@ window.addEventListener('load', () => {
 
 
         let croppie = new Croppie(imgDiv, {
-          enableExif: true,
           viewport: { width: 400, height: 400, type: 'circle' },
           boundary: { width: 450, height: 450 }
         });
