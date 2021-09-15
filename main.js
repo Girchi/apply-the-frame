@@ -1,5 +1,8 @@
 import './croppie/croppie.js';
 
+// Detect if user is using Safari browser
+let isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+
 function handleCrop(imageSrc) {
   const canvas = document.getElementById("canvas");
   const ctx = canvas.getContext("2d");
@@ -18,18 +21,35 @@ function handleCrop(imageSrc) {
         ctx.drawImage(frameImg, 0, 0, w, h);
         
         let img = canvas.toDataURL("image/png", 1.0);
-        document.write(`
-        <style>
-        @import "./cropped.css"
-        </style>
+
+        if(isSafari) {
+          document.write(`
+          <style>
+          @import "./cropped.css"
+          </style>
+          
+          <div class='generatedContainer'>
+          <p>დააკლიკე ფოტოს გასახსნელად</p>
+            <a href="${img}">
+              <img class='generatedImg' src="${img}">
+              </a>
+          </div>
+          `);
+        } else {
+          document.write(`
+          <style>
+          @import "./cropped.css"
+          </style>
+          
+          <div class='generatedContainer'>
+          <p>დააკლიკე ფოტოს გადმოსაწერად</p>
+            <a href="${img}" download>
+              <img class='generatedImg' src="${img}">
+              </a>
+          </div>
+          `);
+        }
         
-        <div class='generatedContainer'>
-        <p>დააკლიკე ფოტოს გადმოსაწერად</p>
-          <a href="${img}" download>
-            <img class='generatedImg' src="${img}">
-            </a>
-        </div>
-        `);
       }
     } catch(err) {
       console.log("Something went wrong:\n", err);
