@@ -30,7 +30,7 @@ function handleCrop(imageSrc) {
           
           <div class='generatedContainer'>
           <p>დააკლიკე ფოტოს გასახსნელად</p>
-            <a href="${img}">
+            <a href="${img}" download="FramedImage">
               <img class='generatedImg' src="${img}">
               </a>
           </div>
@@ -42,8 +42,8 @@ function handleCrop(imageSrc) {
           </style>
           
           <div class='generatedContainer'>
-          <p>დააკლიკე ფოტოს გასახსნელად</p>
-            <a href="${img}">
+          <p>დააკლიკე ფოტოს გადმოსაწერად</p>
+            <a href="${img}" download>
               <img class='generatedImg' src="${img}">
               </a>
           </div>
