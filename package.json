@@ -1,0 +1,24 @@
+{
+  "name": "apply-the-frame",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Girchi/apply-the-frame.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Girchi/apply-the-frame/issues"
+  },
+  "homepage": "https://github.com/Girchi/apply-the-frame#readme",
+  "dependencies": {
+    "axios": "^0.21.4",
+    "facebook-login": "^1.4.1",
+    "fb": "^2.0.0"
+  }
+}

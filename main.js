@@ -1,5 +1,23 @@
 import './croppie/croppie.js';
 
+// import {FB, FacebookApiException} from 'fb';
+
+
+// FB.getLoginStatus(function(response) {
+//   statusChangeCallback(response);
+//   console.log(response)
+// });
+
+
+// function checkLoginState() {
+
+//   FB.getLoginStatus(function(response) {
+
+//     statusChangeCallback(response);
+//   });
+// }
+
+console.log(response)
 function handleCrop(imageSrc) {
   const canvas = document.getElementById("canvas");
   const ctx = canvas.getContext("2d");

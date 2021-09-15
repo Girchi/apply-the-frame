@@ -13,7 +13,67 @@
 </head>
 
 <body>
+  
+  <fb:login-button 
+  scope="public_profile,email"
+  onlogin="checkLoginState();">
+</fb:login-button>
 
+  <script>
+
+    const APPID = '1247284239070888'
+    window.fbAsyncInit = function() {
+      FB.init({
+        appId      : APPID,
+        cookie     : true,
+        xfbml      : true,
+        version    : 'v12.0'
+      });
+        
+      FB.AppEvents.logPageView();   
+        
+    };
+  
+    (function(d, s, id){
+       var js, fjs = d.getElementsByTagName(s)[0];
+       if (d.getElementById(id)) {return;}
+       js = d.createElement(s); js.id = id;
+       js.src = "https://connect.facebook.net/en_US/sdk.js";
+       fjs.parentNode.insertBefore(js, fjs);
+     }(document, 'script', 'facebook-jssdk'));
+
+     FB.getLoginStatus(function(response) {
+      console.log('1' + response)
+    });
+    
+    
+    function checkLoginState() {
+    
+      
+      FB.getLoginStatus(function(response) {
+        console.log(response)
+        FB.api('/me', function(response) {
+          console.log(JSON.stringify(response.id));
+          let a = JSON.stringify(response.name)
+          document.getElementById("name").innerHTML = `${a}`
+          
+          let userId = JSON.stringify(response.id).slice(1,-1);
+          var img = document.createElement('img');
+          img.src = `https://graph.facebook.com/${userId}/picture`
+          document.getElementById('imgdiv').appendChild(img);
+        });
+
+
+      
+      });
+    }
+    
+
+     
+  </script>
+
+<h1 id="name">a</h1>
+<div id="imgdiv"></div>
   <div class="container">
     <div class="img-upload">
       <label>ატვირთე ფაილი</label>
