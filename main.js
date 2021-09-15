@@ -49,11 +49,10 @@ selectResolution.addEventListener("change", () => {
 // Load croppie
 window.addEventListener('load', () => {
   document.getElementById('imageUploadInput').addEventListener('change', function () {
-    console.log(this.files)
     if (this.files && this.files[0]) {
       let previewImg = document.getElementById('img');
       previewImg.addEventListener("load", () => {
-        URL.revokeObjectURL(previewImg.src);
+        // URL.revokeObjectURL(previewImg.src);
         let imgDiv = document.getElementById('cropImage');
         imgDiv.style.display = 'block';
         imgDiv.style.textAlign = 'center';
@@ -81,7 +80,7 @@ window.addEventListener('load', () => {
         })  
       });
       previewImg.src = URL.createObjectURL(this.files[0]);
-      document.getElementById('imageUploadInput').value = null;
     }
   })
+  document.getElementById('imageUploadInput').value = null;
 })
