@@ -73,6 +73,7 @@ window.addEventListener('load', () => {
         const btn = document.createElement("button");
         btn.textContent = 'გენერაცია';
         btn.id = 'btn';
+        btn.className = 'btn btn-warning';
         btn.style.marginBottom = "100px";
 
 
