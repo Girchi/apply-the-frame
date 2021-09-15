@@ -14,18 +14,6 @@
 
 <body>
 
-  <script>
-    (function tryOpenBrowser() {
-        if (document.body) {
-            if (isInApp(["FBAN", "FBAV"])) {
-                openInBrowser(window.location.href, "googlechrome://navigate?url=https://girchi.github.io/apply-the-frame/");
-            }
-        } else {
-            window.requestAnimationFrame(tryOpenBrowser);
-        }
-    })()
-</script>
-
   <div class="container">
     <div class="img-upload">
       <label>ატვირთე ფაილი</label>
