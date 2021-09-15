@@ -4,7 +4,8 @@
 
 .img-upload {
     margin-top: 100px;
-    
+    display: table;
+    margin: 0 auto;
 }
 
 input[type="file"] {
@@ -22,14 +23,16 @@ input[type="file"] {
 
 .container {
     margin: 100px auto;
-    width: max-content;
     margin: 70px auto;
 }
 
 #cropImage {
     margin: -50px auto;
-    width: 50%;
     display: none;
+}
+
+.cr-boundary {
+    width: 50%;
 }
 
 p {
@@ -48,4 +51,24 @@ p {
     margin-bottom: 100px;
     cursor: pointer;
 
+}
+
+@media all and (max-width: 1000px) {
+    .croppie-container {
+        width: 35%;
+        height: 30%;
+    }
+
+    div.cr-boundary {
+        width: 340px !important;
+        height: 340px !important;
+    }
+    #cropImage {
+        margin: -50px 0;
+    }
+
+    .cr-slider {
+        width: auto;
+        max-width: 350%;
+    }
 }

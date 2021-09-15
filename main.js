@@ -54,7 +54,9 @@ window.addEventListener('load', () => {
       previewImg.addEventListener("load", () => {
         // URL.revokeObjectURL(previewImg.src);
         let imgDiv = document.getElementById('cropImage');
-        imgDiv.style.display = 'block';
+        imgDiv.style.display = 'table';
+        imgDiv.style.display = 'table';
+        imgDiv.style.margin = '0 auto';
         imgDiv.style.textAlign = 'center';
 
         // Submit button
@@ -65,7 +67,7 @@ window.addEventListener('load', () => {
 
         let croppie = new Croppie(imgDiv, {
           enableExif: true,
-          viewport: { width: 400, height: 400, type: 'circle' },
+          viewport: { width: 300, height: 300, type: 'square' },
           boundary: { width: 450, height: 450 }
         });
 
@@ -77,7 +79,7 @@ window.addEventListener('load', () => {
 
         // Add a frame to the cropped image
         document.getElementById('btn').addEventListener('click', () => {
-          croppie.result('canvas', { width: 1000, height: 1000 }, 'png', 1, true).then((src) => { handleCrop(src); });
+          croppie.result('canvas', "original", 'png', 1, true).then((src) => { handleCrop(src); });
         })  
       });
       previewImg.src = URL.createObjectURL(this.files[0]);
