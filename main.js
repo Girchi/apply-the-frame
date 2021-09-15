@@ -20,25 +20,11 @@ function handleCrop(imageSrc) {
         let img = canvas.toDataURL("image/png", 1.0);
         document.write(`
         <style>
-        .generatedContainer {
-            align-items: center;
-            margin: 180px auto;
-            width: max-content;
-          }
-          p {
-            text-align: center;
-          }
-          .generatedImg {
-            width: 300px;
-            height: 300px;
-          }
-          p {
-            font-family: sans-serif;
-          }
+        @import "./cropped.css"
         </style>
         
         <div class='generatedContainer'>
-        <p>დააკლიკე გადმოსაწერად</p>
+        <p>დააკლიკე ფოტოს გადმოსაწერად</p>
           <a href="${img}" download>
             <img class='generatedImg' src="${img}">
             </a>
@@ -63,10 +49,10 @@ selectResolution.addEventListener("change", () => {
 // Load croppie
 window.addEventListener('load', () => {
   document.getElementById('imageUploadInput').addEventListener('change', function () {
-
+    console.log(this.files)
     if (this.files && this.files[0]) {
       let previewImg = document.getElementById('img');
-      previewImg.onload = () => {
+      previewImg.addEventListener("load", () => {
         URL.revokeObjectURL(previewImg.src);
         let imgDiv = document.getElementById('cropImage');
         imgDiv.style.display = 'block';
@@ -86,14 +72,16 @@ window.addEventListener('load', () => {
         croppie.bind({
           url: previewImg.src
         });
+        // Add Submit button
         imgDiv.append(btn);
 
         // Add a frame to the cropped image
         document.getElementById('btn').addEventListener('click', () => {
-          croppie.result('canvas', 'original').then((src) => { handleCrop(src); });
+          croppie.result('canvas', { width: 1000, height: 1000 }, 'png', 1, true).then((src) => { handleCrop(src); });
         })  
-      }
+      });
       previewImg.src = URL.createObjectURL(this.files[0]);
+      document.getElementById('imageUploadInput').value = null;
     }
   })
 })

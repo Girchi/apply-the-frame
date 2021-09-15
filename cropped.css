@@ -1,0 +1,15 @@
+.generatedContainer {
+  align-items: center;
+  margin: 180px auto;
+  width: max-content;
+}
+
+p {
+  font-family: sans-serif;
+  text-align: center;
+}
+
+.generatedImg {
+  width: 300px;
+  height: 300px;
+}
