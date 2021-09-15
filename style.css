@@ -6,9 +6,18 @@
     margin-top: 100px;
 }
 
-#imageUploadInput {
-    width: max-content;
+input[type="file"] {
+    display: block !important;
+    width: 100% !important;
+    height: 100% !important;
+    opacity: 1 !important;
+    overflow: hidden !important;
+    z-index: 100 !important;
+    margin-top: 5px;
+    padding-top: -20px;
+    top: -20px;
 }
+
 
 .container {
     margin: 100px auto;
@@ -37,5 +46,5 @@ p {
 #btn {
     margin-bottom: 100px;
     cursor: pointer;
-    
+
 }

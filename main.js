@@ -25,6 +25,9 @@ function handleCrop(imageSrc) {
             margin: 180px auto;
             width: max-content;
           }
+          p {
+            text-align: center;
+          }
           .generatedImg {
             width: 300px;
             height: 300px;
@@ -74,7 +77,7 @@ window.addEventListener('load', () => {
         btn.textContent = 'გენერაცია';
         btn.id = 'btn';
 
-        
+
         let croppie = new Croppie(imgDiv, {
           viewport: { width: 400, height: 400, type: 'circle' },
           boundary: { width: 450, height: 450 }
