@@ -55,13 +55,13 @@ p {
 
 @media all and (max-width: 1000px) {
     .croppie-container {
-        width: 35%;
+        width: max-content;
         height: 30%;
     }
 
     div.cr-boundary {
-        width: 340px !important;
-        height: 340px !important;
+        width: 350px !important;
+        height: 350px !important;
     }
     #cropImage {
         margin: -50px 0;
@@ -70,5 +70,64 @@ p {
     .cr-slider {
         width: auto;
         max-width: 350%;
+    }
+}
+
+@media all and (max-width: 370px) { 
+    .croppie-container {
+        width: 30%;
+        height: 30%;
+    }
+
+    div.cr-boundary {
+        width: 335px !important;
+        height: 335px !important;
+    }
+}
+
+@media all and (max-width: 320px) { 
+    div.cr-boundary {
+        width: 305px !important;
+        height: 305px !important;
+    }
+}
+
+@media all and (min-width: 320px) { 
+    div.cr-boundary {
+        width: 300px !important;
+        height: 300px !important;
+    }
+}
+
+@media all and (min-width: 370px) {
+    div.cr-boundary {
+        width: 350px !important;
+        height: 350px !important;
+    }
+} 
+
+@media all and (min-width: 400px) { 
+    .croppie-container {
+        width: 40%;
+        height: 40%;
+    }
+
+    div.cr-boundary {
+        width: 370px !important;
+        height: 370px !important;
+    }
+}
+
+@media all and (min-width: 450px) {
+    div.cr-boundary {
+        width: 400px !important;
+        height: 400px !important;
+    }
+ }
+
+@media all and (min-width: 500px) { 
+    div.cr-boundary {
+        width: 450px !important;
+        height: 450px !important;
     }
 }
